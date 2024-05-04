@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.sneakers</title>
+
+    <!-- cdn font link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- custom css file link -->
+    <!-- <link rel="stylesheet" href="pj_css.css"> -->
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100:300:400:500:600&display=swap');
+
+        :root {
+            
+            background-color: black;
+            --green: #0d8540;
+            --dark-color: #0f6835;
+            --black: #444;
+            --light-color: #666;
+            --border: .1rem solid rgba(0, 0, 0, .1);
+            --border-hover: .1rem solid var(--black);
+            --box-shadow: 0.5rem 1rem rgba(0, 0, 0, .1);
+
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+            text-decoration: none;
+            text-transform: capitalize;
+            transition: all .2s linear;
+            transition: width none;
+        }
+
+        body{
+            height:120rem;
+        }
+
+        html {
+            font-size: 62.5%;
+            overflow-x: hidden;
+            scroll-padding-top: 5rem;
+            scroll-behavior: smooth;
+
+        }
+
+        html::-webkit-scrollbar {
+            width: 1rem;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background: var(--black);
+        }
+        section{
+            padding: 5rem 9%;
+        }
+        .btn{
+            margin-top: 1rem;
+            display: inline-block;
+            padding: .9rem 3rem;
+            border-radius: .5rem;
+            color: #fff;
+            background: var(--green);
+            font-size: 1.7rem;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .btn:hover{
+            background: var(--dark-color);
+        }
+
+        .header .header-1 {
+            /* background: black; */
+            padding: 1.5rem 9%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .header .header-1 .logo {
+            font-size: 2.5rem;
+            font-weight: bolder;
+            color: #fff;
+
+        }
+
+        .header .header-1 .logo i {
+            color: var(--green);
+        }
+
+        .header .header-1 .search-form {
+            width: 50rem;
+            height: 5rem;
+            border: 1px solid #999999;
+            overflow: hidden;
+            /* background: black; */
+            display: flex;
+            align-items: center;
+            /* border-radius: 2.8rem; */
+
+        } 
+
+         .header .header-1 .search-form input {
+            font-size: 1.6rem;
+            padding: 0 1.2rem;
+            height: 100%;
+            width: 100%;
+            /* border: 2px solid #999999; */
+            background: black;
+            text-transform: none;
+            color: #fff;
+
+        }
+
+        .header .header-1 .search-form label {
+            font-size: 2.5rem;
+            padding-right: 1.5rem;
+            color: #d0d0d0;
+            cursor: pointer;
+        }
+
+        .header .header-1 .search-form label:hover {
+            color: var(--green);
+        }
+
+        .header .header-1 .icons .fas{
+            font-size: 2.5rem;
+            margin-left: 1.5rem;
+            color: #d0d0d0;
+            cursor: pointer;
+        }
+
+
+        .header .header-1 .icons .fas:hover{
+            color: var(--green);
+        }
+
+        #search-btn {
+            display: none;
+        }
+
+        .header .header-2 {
+            background: var(--green);
+        }
+
+        .header .header-2 .navbar {
+            text-align: center;
+        }
+
+        .header .header-2 .navbar a {
+            color: black;
+            display: inline-block;
+            padding: 1.2rem;
+            font-size: 1.7rem;
+
+        }
+
+        .header .header-2 .navbar a:hover {
+            background-color: var(--dark-color);
+        }
+        .header .header-2.active{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+
+        }
+        .bottom-navbar{
+            text-align: center;
+            background: var(--green);
+            position: fixed;
+            bottom: 0; left: 0; right: 0;        
+            z-index: 1000;
+            display: none;
+        }
+        .bottom-navbar a{
+            font-size: 2.5rem;
+            padding: 2rem;
+            color: black;
+
+        }
+        .bottom-navbar a:hover{
+            background: var(--dark-color);
+        }
+        .login-form-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255,255,255,.9);
+            position: fixed;
+            top: 0;
+            right: -105%;
+            z-index: 10000;
+            height: 100%;
+            width: 100%;
+        }
+        .login-form-container.active{
+            right: 0;
+        }
+        .login-form-container form{
+            background: black;
+            border: var(--border);
+            width: 40rem;
+            padding: 2rem;
+            box-shadow: var(--box-shadow);
+            border-radius: .5rem;
+            margin: 2rem;
+
+        }
+        .login-form-container form h3{
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            color: #fff;
+            text-align: center;
+        }
+        .login-form-container form span{
+            display: block;
+            font-size: 1.5rem;
+            padding-top: 1rem;
+        }
+        .login-form-container form .box{
+            width: 100%;
+            margin: .7rem 0;
+            font-size: 1.6rem;
+            border: var(--border);
+            border-radius: .5rem;
+            padding: 1rem 1.2rem;
+            color: var(--black);
+            text-transform: none;
+        }
+        .login-form-container form .checkbox{
+            display: flex;
+            align-items: center;
+            /* justify-content: ; */
+            gap: .5rem;
+            padding:1rem 0 ;
+
+        }
+        .login-form-container form .checkbox label{
+            font-size: 1.5rem;
+            color: var(--light-color);
+            cursor: pointer;
+
+        }
+        .login-form-container form .btn{
+            text-align: center;
+            width: 100%;
+            margin: 1.5rem 0;
+        }
+        .login-form-container form p{
+            padding-top: .8rem;
+            color: var(--light-color);
+            font-size: 1.5rem;
+
+        }
+        .login-form-container form p a{
+            color: var(--green);
+            text-decoration: underline;
+        }
+        .login-form-container #close-login-btn{
+            position: absolute;
+            top: 1.5rem;
+            right: 2.5rem;
+            font-size: 5rem;
+            color: var(--black);
+            cursor: pointer;
+        }
+        .home{
+            background: url('banner.jpeg') no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        .home .row{
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+
+        }
+        .home .row .content{
+            text-align: center;
+            
+            flex: 1 1 8rem;
+
+        }
+        .home .row .books-slider{
+            /* border: 2px solid red; */
+            flex: 1 1 12rem;
+            text-align: center;
+            margin-top: 2rem;
+
+        }
+        .home .row .books-slider a img{
+            /* border: 2px solid black; */
+            height: 28rem;
+        }
+        .home .row .books-slider a:hover img{
+            transform: scale(.9);
+        }
+        
+        .home .row .content h3{
+            margin-top: 6rem;
+            color: #fff;
+            font-size: 4.5rem;
+
+        }
+        .home .row .content p{
+            margin-top: 1.3rem;
+            color: #999999;
+            font-size: 1.5rem;
+            line-height: 2;
+            padding: 1rem 0;
+        }
+
+/*Footer*/
+.website-details{
+    display: flex;
+    justify-content: space-around;
+    padding: 30px 0;
+    margin-top: 20px;
+    color: white;
+}
+
+.foot-input{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.foot-input input{
+  padding: 10px 110px 10px 10px;
+}
+
+.foot-input i{
+  padding: 10px;
+}
+
+.website-details h2{
+    margin-bottom: 25px;
+    font-size: 20px;
+    text-decoration: underline 3px #27ae60;
+    color:#27ae60;
+    text-underline-offset: 10px;
+}
+
+.website-details ul li{
+    list-style: none;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding-inline-start: 0px;
+    color: white;
+}
+
+.website-details .details{
+    width: 25%;
+    font-size: 15px;
+}
+
+.website-details .services a, .website-details .useful-links a{
+    color: white;
+    text-decoration: none;
+}
+
+.website-details .services a:hover, .website-details .useful-links a:hover{
+    color:#27ae60;
+}
+
+.website-details .social-media i{
+    color: white;
+    font-size: 25px;
+    margin: 15px 20px 0 0;
+}
+
+.website-details .social-media i:hover{
+  color: #27ae60;
+}
+
+.copyright{
+    background-color:#27ae60;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 18px;
+}
+
+.about .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5rem;
+    /* background: white; */
+}
+
+.about .content {
+    flex: 1 1 auto; /* Allow content to grow */
+    text-align: center; /* Center align the content */
+    padding: 0 3rem; /* Add padding to the left and right to center the content */
+}
+
+
+.about .row .content{
+    flex: 1 1 50rem;
+}
+
+.about .row .content h3{
+    color: var(--black);
+    font-size: 3rem;
+    line-height: 1.5;
+    padding-top: 4rem;
+    margin-bottom: 1rem;
+    /* background: white; */
+}
+
+.about .row .content .divider{
+    
+    height: .3rem;
+    display: inline-block;
+    width: 20%;
+}
+
+.about .row .content p{
+    font-size: 1.3rem;
+    padding: 0.5rem 0;
+    color: #444444;
+    line-height: 2.0;
+    text-align: center;
+}
+
+.about .row .image{
+    flex: 1 3 0rem;
+}
+
+.about .row .image img{
+    width: 100%;
+    height: 100%;
+}
+
+
+.about .heading {
+    text-align: center; 
+    margin-bottom: 1rem; 
+    color: #1a1b1b; 
+    font-size: 4.5rem; 
+    letter-spacing: 3px;
+}
+
+.about .content .btn {
+    display: inline-block;
+  
+    color: white; 
+    padding: 10px 20px; 
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 1.5rem; 
+    border-radius: 5px; 
+}
+
+.about .content .btn:hover {
+    background: #838584; 
+}
+.about{
+    background: #f0f0f0;
+}
+  
+
+/* footer ends  */        /* media queries */
+        @media(max-width:991px){
+            html{
+                font-size: 55%;
+            }
+            .header .header-1{
+                padding: 2rem;
+            }
+            section{
+            padding: 3rem 2rem;
+            }
+        }
+
+        @media(max-width:768px){
+
+            html{
+                scroll-padding-top: 0;
+
+            }
+            body{
+                padding-bottom: 6rem;
+            }
+
+            .header .header-2{
+                display: none;
+            }
+            .bottom-navbar{
+                display: block;
+            }
+            .header .header-1{
+                box-shadow: var(--box-shadow);
+                position: relative;
+            }
+            .header .header-1 .search-form{
+                position: absolute;
+                top: -115%;
+                right: 2rem;
+                width: 90%;
+                box-shadow: var(--box-shadow);
+            }
+            .header .header-1 .search-form.active{
+                top: 115%;
+            }
+            #search-btn{
+                display: inline-block;
+            }
+            .home .row .content{
+                text-align: center;
+            }
+            .home .row .content h3{
+                font-size: 3.5rem;
+            }
+        }
+        @media(max-width:450px){
+            html{
+                font-size: 50%;
+            }
+            footer{
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footerLeft{
+      padding: 20px;
+      width: 90%;
+    }
+  
+    .footerRight{
+      padding: 20px;
+      width: 90%;
+      align-items: center;
+      background-color: whitesmoke;
+    }
+
+        }
+    </style>
+
+</head>
+<body>
+    <!-- header section begin-->
+    <header class="header">
+        <div class="header-1">
+            <a href="#" class="logo"><img src="img\sneakers.png" alt="logo"></a>
+
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+            </form>
+
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>  
+        </div>
+
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="#home">Home</a>
+                <a href="features.html">Featured</a>
+                <!-- <a href="#reviews">Reviews</a> -->
+                <a href="contactus.html">Contact us</a>
+            </nav>
+        </div
+    </header>
+    <!-- header section end-->
+<!-- bottom navbar starts -->
+
+<nav class="bottom-navbar">
+    <a href="#home" class="fas fa-home"></a>
+    <a href="#featured" class="fas fa-list"></a>
+    <a href="#contact_us" class="fas-fa-phone"></a>
+</nav>
+<!-- bottom navbar end -->
+<!--  login form starts-->
+<div class="login-form-container">
+
+    <div id="close-login-btn" class="fas fa-times"></div>
+
+<form action="">
+    <h3>sign in</h3>
+    <span>username</span>
+    <input type="email" name="" class="box" placeholder="enter your email " id="">
+    <span>password</span>
+    <input type="password" name="" class="box" placeholder="enter your password " id="">
+    <div class="checkbox">
+        <input type="checkbox" name="" id="remember-me">
+        <label for="remember-me">remember me</label>
+    </div>
+    <input type="submit" value="sign in" class="btn">
+    <p>forget password ? <a href="#">click here </a></p>
+    <p>don't have account ? <a href="#">create one </a></p>
+</form>
+</div>
+<!-- login form ends -->
+<!-- home section starts  -->
+<section class="home" id="home">
+    <div class="row">
+        <div class="content">
+            <h3>Welcome to sneakers....</h3>
+            <p>Sneakers (or trainers if you're British), once the symbol of athleticism, have 
+                transcended their primary function to become commercial and fashionable 
+                objects of desire. From sportswear and street style to catwalk fashion, 
+                sneakers have made their mark as cultural commodities.The last decade has 
+                seen a huge shift in how sneakers are worn. Donning a pair is no longer frowned 
+                upon in the workplace or on more formal occasions.Growing sales of sneakers-along with the pursuit 
+                of comfort. </p>
+            <a href="#" class="btn">visit now</a>
+        </div>
+        <div class="books-slider">
+            <div class="wraper">
+               
+                <a href="#"><img src="img\OIP2.jpeg" alt="shoe"></a>
+    </div>
+</section>
+
+<section class="about" id="about">
+
+    <h1 class="heading"> About Us </h1>
+    <div class="row">
+
+        <div class="content">
+            <h3>Discover The World Of Sneakers At Our Store.</h3>
+            <p>"Our story revolves around an undying passion for sneakers. We believe that sneakers aren't just shoes; they're a canvas of self-expression, an embodiment of personal style, and a culture in their own right. Our journey began as a humble homage to the world of sneakers, and it has since evolved into the ultimate destination for sneaker enthusiasts. We've curated a collection that showcases the finest and most sought-after sneakers from around the globe."</p>
+            <p>"You'll not only discover an incredible variety of sneakers but also gain insights into the stories behind each pair. Join us in this sneaker journey, where your passion meets our commitment to delivering an unparalleled shopping experience. We're here to provide you with not just sneakers but also a piece of the culture and the story behind every step."</p>
+            <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="image">
+            <img src="img\about.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<!--FOOTER-->
+<footer>
+    <div class="website-details">
+      <!--DETAILS-->
+      <div class="details">
+        <h2>.sneakers</h2>
+        <p>Our shoe store isn't just another sea of choices. We've curated a collection that caters to all your needs, from workweek staples to weekend warriors.</p>
+        <div class="foot-input"> 
+          <input type="email" placeholder="Enter your email address" >
+          <button><i class="fa-sharp fa-solid fa-arrow-right"></i></button>
+        </div>
+        <!--SOCIAL MEDIA-->
+      </div>
+      <!--USEFUL LINKS-->
+      <div class="useful-links">
+        <h2>Useful Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="features.html">Featured</a></li>
+          <li><a href="contactus.html">Contact US</a></li>
+        </ul>
+      </div>
+      <!--SERVICES-->
+      <div class="services">
+        <h2>Product</h2>
+        <ul>
+              <li >Air Force</li>
+              <li>Air Jordan</li>
+              <li>Blazer</li>
+              <li>Crater</li>
+              <li>Hippie</li>
+          </ul>
+      </div>
+      <!--CONTACT US-->
+      <div class="social-media">
+        <h2>Social Media</h2>
+        <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://twitter.com/"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+    </div>
+    <!--COPYRIGHT-->
+    <div class="copyright">
+      <p>Copyright © 2024. All Rights Reserved</p>
+    </div>
+  </footer>
+    <script>
+
+        searchForm=document.querySelector('.search-form');
+        document.querySelector('#search-btn').onclick=()=>{
+            searchForm.classList.toggle('active');
+        }
+
+        let loginForm=document.querySelector('.login-form-container');
+        document.querySelector('#login-btn').onclick=()=>{
+            loginForm.classList.toggle('active');
+        }
+
+        document.querySelector('#close-login-btn').onclick=()=>{
+            loginForm.classList.remove('active');
+        }
+
+        window.onscroll=()=>{
+            searchForm.classList.remove('active');
+        if(window.scrollY > 80){
+            document.querySelector('.header .header-2').classList.add('active');
+        }
+        else{
+            document.querySelector('.header .header-2').classList.remove('active');
+        }
+        }
+
+        window.load=()=>{
+        if(window.scrollY > 80){
+            document.querySelector('.header .header-2').classList.add('active');
+        }
+        else{
+            document.querySelector('.header .header-2').classList.remove('active');
+        }
+        }
+
+    </script>
+
+</body>
+
+</html>

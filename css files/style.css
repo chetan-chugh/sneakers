@@ -1,0 +1,520 @@
+html{
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+header{
+    background-image: url(/image/img1.jpg);
+    background-size: cover;
+}
+
+header .text{
+    padding: 230px 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+nav .image img{
+    width: 30px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 40px 0 20px;
+    font-size: larger;
+}
+
+nav .links ul{
+    display: flex;
+}
+
+nav .links ul li{
+    list-style: none;
+    padding-left: 35px;
+}
+
+nav .links ul li a{
+    text-decoration: none;
+    color: white;
+}
+
+/*About US*/
+section .about-us{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 200px;
+    margin: 100px;
+    font-size: 20px;
+    line-height: 45px;
+}
+
+section .about-us h1{
+    color: #002e5f;
+    margin: 0px 0 20px;
+    font-size: 40px;
+}
+
+section .about-us button{
+    border: 2px solid #002e5f;
+    border-radius: 20px;
+    background-color: white;
+    text-decoration: none;
+    margin: 30px 0 0;
+    padding: 5px;
+    box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.3);
+}
+
+section .about-us button a{
+    text-decoration: none;
+    color: black;
+}
+
+section .about-us a:hover{
+    background-color: rgb(90, 92, 241);
+    color: white;
+    font-weight: bold;
+}
+
+/*Our Services*/
+.services{
+    text-align: center;
+    height: auto;
+    padding: 30px 70px;
+    font-size: 20px;
+    background-color:#f2f2f2;
+}
+
+.services h1{
+    font-size: 40px;
+    margin: 20px 0;
+    color: rgb(0, 46, 95);
+}
+
+.service{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.block{
+    background-color: white;
+    padding: 50px 30px;
+    border-radius: 20px;
+    font-size: medium;
+    width: 300px;
+    font-family: "Varela Round",Arial,"Helvetica Neue",Helvetica,sans-serif
+}
+
+.block h4{
+    padding: 15px 0;
+}
+
+.services .block i{
+    font-size: 30px;
+}
+
+.services .block p{
+    line-height: 30px;
+}
+
+/*Data*/
+.data{
+    background-image: url(/image/img2.jpg);
+    background-size: cover;
+    display: flex;
+    color: white;
+    padding: 50px 50px 50px 150px;
+}
+
+.data .box{
+    text-align: center;
+    margin-right: 70px;
+    font-size: 25px;
+}
+
+.data .box p:nth-child(2){
+    font-size: 40px;
+    padding: 10px 0;
+}
+
+/*Our Project*/
+.our-projects{
+    text-align: center;    
+}
+
+.our-projects h1{
+    color: rgb(0, 46, 95);
+    padding: 50px 0 20px 0;
+    font-size: 35px;
+}
+
+.projects{
+    display: flex;
+    padding: 30px 100px;
+}
+
+.projects .box{
+    padding: 50px 20px 100px;
+    margin-right: 30px;
+    border-radius: 20px;
+    border: 0.5px solid black;
+}
+
+.projects .box h4{
+    padding: 15px 0;
+    font-size: 20px;
+}
+
+.projects .box i{
+    font-size: 30px;
+}
+
+/*Contact Now*/
+.contact-now{
+    background-image: url(/image/img3.jpg);
+    text-align: center;
+    padding: 50px 100px;
+    color: white;
+    font-size: larger;
+}
+
+.contact-now p{
+    padding: 20px 0;
+}
+
+.contact-now button{
+    padding: 5px 25px;
+    border-radius: 20px;
+    border-color: rgb(0, 46, 95);
+}
+
+.contact-now button:hover{
+    color:white;
+    background-color: blue;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/*Testimonials*/
+.testimonials{
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 600px;
+    padding: 50px 100px;
+}
+
+.testimonials h1,p {
+    text-align: center;
+}
+
+.testimonials h1{
+    color: #002e5f;
+    font-size: 35px;
+}
+
+.testimonials .persons{
+    display: flex;
+}
+
+.persons .box{
+    background-color: white;
+    height:400px;
+    margin-right: 30px;
+}
+
+
+.box img{
+    width:250px;
+    margin-bottom: 30px;
+}
+
+/*Our Clients*/
+.our-clients{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 400px;
+    padding: 50px 0;
+}
+
+.our-clients h1{
+    color: #002e5f;
+    font-size: 40px;
+}
+
+.our-clients p{
+    font-size: 20px;
+}
+
+.our-clients .images img{
+    height: 100px;
+    margin-right: 50px;
+}
+
+ .circles{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+ 
+.circle{
+    height: 12px;
+    width: 12px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: rgb(79, 132, 196);
+}
+
+#non-color{
+    background-color: #dddddd;
+}
+
+/*Our Team*/
+.our-team{
+    background-color: #222;
+    padding: 100px 50px;
+    color: white;
+}
+
+.our-team h1{
+    text-align: center;
+    color: #00bfff;
+    font-size: 50px;
+    margin-bottom: 70px;
+}
+
+.team-member{
+    display: flex;
+    justify-content: space-between;
+}
+
+.member{
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    font-size: larger;
+}
+
+.member img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+.member p:nth-child(2){
+    color: #333;
+    padding:3px 0;
+}
+
+.member p:nth-child(3){
+    color:#00bfff;
+}
+
+.member .icon i{
+    color:#333;
+    padding: 50px 20px 0 0;
+}
+
+/*GET IN TOUCH*/
+.get-in-touch{
+    padding: 50px 100px;
+    
+}
+
+.get-in-touch h1{
+    text-align: center;
+    font-size: 40px;
+    color: #002e5f;
+    margin-bottom: 50px;
+}
+
+.get-in-touch .box{
+    display: flex;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.get-in-touch .message{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px 20px;
+
+}
+
+.get-in-touch .message input{
+    width: 160%;
+    font-size: 20px;
+    border-radius: 30px;
+    border: 1px solid #bcbcbc;
+    padding: 20px;
+}
+
+.get-in-touch .message .normal-input{
+    height:40px;
+}
+
+.get-in-touch .message #big-input{
+    height: 200px;
+}
+
+.get-in-touch .box .message button{
+    padding: 5px;
+    border-radius: 20px;
+    background-color: white;
+}
+
+/*FAQ*/
+.faq{
+    background-image: url(/image/Capture1.PNG);
+    background-size: cover;
+    padding: 30px 0px 130px 0px;
+}
+
+.faq h1{
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 40px;
+    color: #00bfff;
+}
+
+.faq ul{
+    padding-left: 300px;
+}
+
+.faq li{
+    list-style: none;
+    margin-bottom: 15px;
+    width: 700px;
+    color: #333;
+    background-color: #00bfff;
+}
+
+.faq li i{
+    color: white;
+    padding: 15px 20px;
+    margin-right: 10px;
+    background-color:#333;
+}
+
+/*FOOTER*/
+.details{
+    padding: 70px 100px;
+    color: white;
+    background-color: #002e5f;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.details a{
+    color: white;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.details h3{
+    padding-bottom: 20px ;
+}
+
+.details .block{
+    width: 330px;
+    background-color: #002e5f;
+}
+
+/*About-US and Useful-Links*/
+.details .about-us li, .useful-links li{
+    display: block;
+    list-style: none;
+    text-underline-offset: 10px;
+    border-bottom: 2px solid white;
+    padding: 10px 0;
+}
+
+/*Contact-US*/
+.details .contact-us{
+    line-height: 25px;
+}
+
+
+.details .contact-us .icon a i{
+    background-color: white;
+    color: #00bfff;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+/*Subscription*/
+.SUBSCRIPTION{
+    width:200px;
+    line-height: 20px;
+}
+
+.SUBSCRIPTION .email{
+    margin-top: 10px;
+}
+
+.SUBSCRIPTION .email input{
+    background-color: #002e5f;
+    border: 0.5px solid white;
+    font-size: large;
+    width: 130px;
+}
+
+.SUBSCRIPTION .email button{
+    padding: 5px 10px;
+    font-size: small;
+}
+
+.SUBSCRIPTION .email button:hover{
+    color:white;
+    background-color: blue;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+/*Copyright*/
+.copyright{
+    padding: 30px 70px;
+    color: white;
+    font-size: small;
+    background-color: #333;
+}
+
+/*Go top*/
+.gotop{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background-color: #00bfff;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+  }
+
+  .gotop i{
+    font-size: 30px;
+    position: relative;
+    top: 10px;
+  }
